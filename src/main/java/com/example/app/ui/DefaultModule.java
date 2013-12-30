@@ -8,7 +8,10 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module(
-        injects = MyActivity.class,
+        injects = {
+                MyActivity.class,
+                SampleIntentService.class
+        },
         complete = false,
         library = true
 )
