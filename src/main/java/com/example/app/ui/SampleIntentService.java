@@ -16,7 +16,7 @@ public class SampleIntentService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         String msg = "boo";
         Log.d("DaggerTests", msg);
-        Context c = getApplicationContext();
+        //TODO use Dagger to construct some objects, eg, from Application Context
 
     }
 }

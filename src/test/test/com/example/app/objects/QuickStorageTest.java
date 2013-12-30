@@ -7,9 +7,7 @@ import javax.inject.Inject;
 
 import static junit.framework.Assert.*;
 
-/**
- * Created by Turlough on 30/12/13.
- */
+//TODO play with Mockito
 public class QuickStorageTest {
     ObjectGraph graph;
    @Inject
