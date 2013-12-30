@@ -12,7 +12,7 @@ import javax.inject.*;
 public class MyActivity extends Activity {
 
     @Inject
-    public ITestable testable;
+    ITestable testable;
     TextView text;
     ObjectGraph graph;
 

@@ -1,18 +1,15 @@
-package com.example.app.ui;
+package com.example.app.objects;
 
-import com.example.app.objects.IStorage;
-import com.example.app.objects.ITestable;
-import com.example.app.objects.QuickStorage;
-import com.example.app.objects.TestableImpl;
+
 import dagger.Module;
 import dagger.Provides;
 
 @Module(
-        injects = MyActivity.class,
+        injects = QuickStorageTest.class,
         complete = false,
         library = true
 )
-public class DefaultModule {
+public class DiModule {
     @Provides
     IStorage provideStorage(){
         return new QuickStorage();

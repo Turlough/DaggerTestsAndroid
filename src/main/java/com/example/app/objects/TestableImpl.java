@@ -1,5 +1,6 @@
 package com.example.app.objects;
 
+
 import javax.inject.Inject;
 
 /**
@@ -7,11 +8,15 @@ import javax.inject.Inject;
  */
 public class TestableImpl implements ITestable {
 
-    @Inject public TestableImpl(){}
+    private final IStorage storage;
 
+    public TestableImpl(IStorage storage){
+        this.storage = storage;
+        storage.save("TestableImpl saved text");
+    }
 
     @Override
     public String getString() {
-        return "test";
+        return storage.load();
     }
 }

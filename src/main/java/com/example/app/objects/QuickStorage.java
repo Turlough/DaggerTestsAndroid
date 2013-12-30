@@ -3,7 +3,7 @@ package com.example.app.objects;
 /**
  * Created by Turlough on 30/12/13.
  */
-public class StorageImpl implements IStorage {
+public class QuickStorage implements IStorage {
     String s = "";
     @Override
     public void save(String s) {
