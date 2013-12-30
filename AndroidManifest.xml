@@ -14,5 +14,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <service android:enabled="true" android:name="com.example.app.ui.SampleIntentService"></service>
     </application>
 </manifest>

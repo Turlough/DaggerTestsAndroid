@@ -1,6 +1,8 @@
 package com.example.app.ui;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import com.example.app.R;
@@ -25,6 +27,12 @@ public class MyActivity extends Activity {
         graph.inject(this);
 
         writeText();
+        doToast();
+    }
+
+    private void doToast() {
+        Intent i = new Intent(this, SampleIntentService.class);
+        startService(i);
     }
 
     public void writeText(){
