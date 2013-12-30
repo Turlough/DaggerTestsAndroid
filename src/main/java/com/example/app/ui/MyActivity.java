@@ -26,10 +26,10 @@ public class MyActivity extends Activity {
         graph.inject(this);
 
         writeText();
-        doToast();
+        launchIntent();
     }
 
-    private void doToast() {
+    private void launchIntent() {
         Intent i = new Intent(this, SampleIntentService.class);
         startService(i);
     }
