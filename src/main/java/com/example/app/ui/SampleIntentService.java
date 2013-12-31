@@ -14,6 +14,7 @@ public class SampleIntentService extends IntentService {
 
     @Inject ITestable testable;
 
+
     public SampleIntentService() {
         super("SampleIntentService");
         ObjectGraph.create(DefaultModule.class).inject(this);

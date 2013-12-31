@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import com.example.app.R;
+import com.example.app.objects.ISettings;
 import com.example.app.objects.ITestable;
 import dagger.ObjectGraph;
 
@@ -12,21 +13,19 @@ import javax.inject.*;
 
 public class MyActivity extends Activity {
 
-    @Inject
-    ITestable testable;
+    @Inject    ITestable testable;
+    @Inject    ISettings settings;
     TextView text;
-    ObjectGraph graph;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        graph = ObjectGraph.create(new DefaultModule());
-        graph.inject(this);
+        ObjectGraph.create(new DefaultModule(getApplicationContext())).inject(this);
 
         writeText();
-        launchIntent();
+        //launchIntent();
     }
 
     private void launchIntent() {
@@ -36,7 +35,8 @@ public class MyActivity extends Activity {
 
     public void writeText(){
         text = (TextView) findViewById(R.id.text);
-        text.setText(testable.getString());
+        String url = settings.getBaseUrl();
+        text.setText(url);
 
     }
 
