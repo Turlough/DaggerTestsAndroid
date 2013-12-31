@@ -17,11 +17,13 @@ public class SampleIntentService extends IntentService {
 
     public SampleIntentService() {
         super("SampleIntentService");
-        ObjectGraph.create(DefaultModule.class).inject(this);
+
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
+        ObjectGraph.create(new DefaultModule(getApplicationContext())).inject(this);
+
         String msg = testable.getString();
         Log.d("DaggerTests", msg);
     }

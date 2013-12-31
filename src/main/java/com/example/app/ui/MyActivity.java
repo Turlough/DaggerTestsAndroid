@@ -25,7 +25,7 @@ public class MyActivity extends Activity {
         ObjectGraph.create(new DefaultModule(getApplicationContext())).inject(this);
 
         writeText();
-        //launchIntent();
+        launchIntent();
     }
 
     private void launchIntent() {
