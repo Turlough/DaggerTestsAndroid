@@ -14,14 +14,14 @@ public class SettingsWrapper implements ISettings {
         prefs = context.getSharedPreferences("com.example.app", Context.MODE_PRIVATE);
     }
 
+    String tagCode = "tagCode";
     @Override
     public String getTagCode() {
-        return prefs.getString("tagCode", "");
+        return prefs.getString(tagCode, "");
     }
-
     @Override
     public void setTagCode(String s) {
-        prefs.edit().putString("tagCode", s);
+        prefs.edit().putString(tagCode, s).commit();
     }
 
     @Override

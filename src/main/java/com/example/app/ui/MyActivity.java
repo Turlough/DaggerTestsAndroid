@@ -24,6 +24,7 @@ public class MyActivity extends Activity {
 
         ObjectGraph.create(new DefaultModule(getApplicationContext())).inject(this);
 
+        settings.setTagCode("new tag code");
         writeText();
         launchIntent();
     }
